@@ -5,7 +5,10 @@ buildscript {
 
     ext.versions = [
             /**Room*/
-             'room':'2.2.1'
+            'room'     : '2.2.1',
+
+            /*Coroutine*/
+            'coroutine': '1.0.0'
     ]
 
     repositories {

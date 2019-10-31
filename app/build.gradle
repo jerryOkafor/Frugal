@@ -62,6 +62,11 @@ dependencies {
     implementation 'androidx.ui:ui-material:0.1.0-dev02'
     implementation 'androidx.ui:ui-tooling:0.1.0-dev02'
 
+    /**Corountine*/
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$versions.coroutine"
+
     /**Room*/
     implementation "androidx.room:room-runtime:$versions.room"
     kapt "androidx.room:room-compiler:$versions.room"
