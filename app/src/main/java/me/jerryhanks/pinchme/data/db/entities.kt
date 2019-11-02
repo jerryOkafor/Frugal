@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme.data.DB
+package me.jerryhanks.pinchme.data.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

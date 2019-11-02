@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme.data.DB
+package me.jerryhanks.pinchme.data.db
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
@@ -13,10 +13,13 @@ import kotlinx.coroutines.flow.Flow
 interface BudgetDao{
 
     @Query("SELECT * FROM budget")
-    fun selectALl():Flow<List<BudgetItem>>
+    fun selectALl(): Flow<List<BudgetItem>>
+
+    @Query("SELECT * FROM budget WHERE id = :id")
+    suspend fun findBudgetItemById(id:Long) : BudgetItem
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertBudgetItem(budgetItem: BudgetItem)
+    fun insertBudgetItem(budgetItem: BudgetItem):Long
 
     @Insert
     fun insertBudgetItems(vararg  budgetItem: BudgetItem)

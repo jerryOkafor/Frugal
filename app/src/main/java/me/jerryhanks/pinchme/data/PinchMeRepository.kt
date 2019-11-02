@@ -6,6 +6,8 @@ package me.jerryhanks.pinchme.data
  * for PinchMe
  **/
 
-class PinchMeRepository : PinchMeDataSource{
-
+class PinchMeRepository : PinchMeDataSource {
+    override fun sayHello(): String {
+        return "Hello"
+    }
 }

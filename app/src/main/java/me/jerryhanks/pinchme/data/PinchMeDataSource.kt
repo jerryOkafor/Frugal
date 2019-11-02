@@ -7,5 +7,5 @@ package me.jerryhanks.pinchme.data
  **/
 
 interface  PinchMeDataSource{
-
+    fun sayHello() : String
 }

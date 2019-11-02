@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme.data.DB
+package me.jerryhanks.pinchme.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -22,11 +22,11 @@ abstract class PinchMeDatabase : RoomDatabase() {
         @Volatile
         private  var INSTANCE:PinchMeDatabase? =  null
 
-        fun getInstance(context: Context) = INSTANCE ?: synchronized(this){
-            INSTANCE ?: buildDataBase(context = context).also { INSTANCE = it }
+        fun getInstance(context: Context,useInMemory:Boolean = false) = INSTANCE ?: synchronized(this){
+            INSTANCE ?: buildDataBase(context = context,useInMemory = useInMemory).also { INSTANCE = it }
         }
 
-        private  fun buildDataBase(context: Context, useInMemory:Boolean = false): PinchMeDatabase {
+        private  fun buildDataBase(context: Context, useInMemory:Boolean): PinchMeDatabase {
             val databaseBuilder  = if (useInMemory)
                 Room.inMemoryDatabaseBuilder(context,PinchMeDatabase::class.java)
             else Room.databaseBuilder(context,PinchMeDatabase::class.java,DB_NAME)
