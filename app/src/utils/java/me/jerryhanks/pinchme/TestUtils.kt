@@ -15,6 +15,6 @@ object TestUtils{
     const val TEST_BUDGTE_AMOUNT = 340.00
 
     @JvmStatic
-    fun getTestBudegt()  = BudgetItem(TEST_BUDGET_ITEM_ID, TEST_BUDGET_ITEM_NAME,
+    fun getTestBudget(id:Long = TEST_BUDGET_ITEM_ID)  = BudgetItem(TEST_BUDGET_ITEM_ID, TEST_BUDGET_ITEM_NAME,
         TEST_BUDGET_ITEM_DESC, TEST_BUDGTE_AMOUNT)
 }

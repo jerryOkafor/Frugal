@@ -2,9 +2,7 @@ package me.jerryhanks.pinchme.data.db
 
 import androidx.test.core.app.ApplicationProvider
 import me.jerryhanks.pinchme.PinchMeApp
-import org.junit.After
 import org.junit.Before
-import java.io.IOException
 
 
 /**
@@ -12,19 +10,14 @@ import java.io.IOException
  * for PinchMe
  **/
 
+
 open class BaseDaoTest {
-    protected lateinit var db:PinchMeDatabase
+    protected lateinit var db: PinchMeDatabase
 
     @Before
-    fun createDB(){
+    open fun setUp() {
         val context = ApplicationProvider.getApplicationContext<PinchMeApp>()
-        db = PinchMeDatabase.getInstance(context,useInMemory = true)
+        db = PinchMeDatabase.getInstance(context, useInMemory = true)
     }
 
-
-    @After
-    @Throws(IOException::class)
-    fun closeDB(){
-        db.close()
-    }
 }

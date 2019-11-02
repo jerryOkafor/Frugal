@@ -29,10 +29,9 @@ abstract class PinchMeDatabase : RoomDatabase() {
         private  fun buildDataBase(context: Context, useInMemory:Boolean): PinchMeDatabase {
             val databaseBuilder  = if (useInMemory)
                 Room.inMemoryDatabaseBuilder(context,PinchMeDatabase::class.java)
+                    .fallbackToDestructiveMigration()
             else Room.databaseBuilder(context,PinchMeDatabase::class.java,DB_NAME)
                 .fallbackToDestructiveMigrationFrom(1)
-
-
             return databaseBuilder.build()
         }
     }
