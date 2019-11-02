@@ -26,6 +26,15 @@ android {
         }
     }
 
+    sourceSets {
+        androidTest {
+            java.srcDirs += "src/utils/java"
+        }
+        test {
+            java.srcDirs += "src/utils/java"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -41,6 +50,13 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java', 'src/utils/java/'
+            }
+        }
     }
 }
 
