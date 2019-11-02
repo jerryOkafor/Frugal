@@ -3,6 +3,7 @@ package me.jerryhanks.pinchme.data.db
 import androidx.annotation.CallSuper
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import kotlinx.coroutines.runBlocking
+import me.jerryhanks.pinchme.TestUtils
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
@@ -28,14 +29,15 @@ private  lateinit var budgetDao: BudgetDao
 
     @Test
     fun insertBudgetItemSavesData() = runBlocking {
-        val budgetItem = BudgetItem(1L,"Test Name","Test description",200.00)
+        val budgetItem = TestUtils.getTestBudegt()
 
         val newId = budgetDao.insertBudgetItem(budgetItem)
 
         val budgetItemById  = budgetDao.findBudgetItemById(newId)
 
         assertThat(budgetItemById, `is`(notNullValue()))
-        assertThat(budgetItemById.id, `is`(equalTo(1L)))
+        assertThat(budgetItemById.id, `is`(equalTo(TestUtils.TEST_BUDGET_ITEM_ID)))
         assertThat(budgetItemById.name, `is`(equalTo(budgetItem.name)))
+        assertThat(budgetItemById.amount, `is`(equalTo(budgetItem.amount)))
     }
 }
