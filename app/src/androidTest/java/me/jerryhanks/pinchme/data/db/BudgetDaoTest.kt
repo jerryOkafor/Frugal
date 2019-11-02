@@ -27,12 +27,12 @@ private  lateinit var budgetDao: BudgetDao
 
 
     @Test
-    fun insertBudgetItemSavesData(){
+    fun insertBudgetItemSavesData() = runBlocking {
         val budgetItem = BudgetItem(1L,"Test Name","Test description",200.00)
 
         val newId = budgetDao.insertBudgetItem(budgetItem)
 
-        val budgetItemById  = runBlocking { budgetDao.findBudgetItemById(newId) }
+        val budgetItemById  = budgetDao.findBudgetItemById(newId)
 
         assertThat(budgetItemById, `is`(notNullValue()))
         assertThat(budgetItemById.id, `is`(equalTo(1L)))

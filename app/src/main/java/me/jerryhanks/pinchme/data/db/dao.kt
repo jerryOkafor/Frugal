@@ -19,21 +19,21 @@ interface BudgetDao{
     suspend fun findBudgetItemById(id:Long) : BudgetItem
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertBudgetItem(budgetItem: BudgetItem):Long
+    suspend fun insertBudgetItem(budgetItem: BudgetItem):Long
 
     @Insert
-    fun insertBudgetItems(vararg  budgetItem: BudgetItem)
+    suspend fun insertBudgetItems(vararg  budgetItem: BudgetItem)
 
     @Delete
-    fun deleteBudgetItem(budgetItem: BudgetItem)
+    suspend fun deleteBudgetItem(budgetItem: BudgetItem)
 
     @Delete
-    fun deleteBudgetItems(vararg  budgetItem: BudgetItem)
+    suspend fun deleteBudgetItems(vararg  budgetItem: BudgetItem)
 
     @Update
-    fun updateBudgetItem(budgetItem: BudgetItem)
+    suspend fun updateBudgetItem(budgetItem: BudgetItem)
 
     @Query("DELETE FROM budget")
-    fun deleteAllBudgetItem()
+    suspend fun deleteAllBudgetItem()
 
 }
