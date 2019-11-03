@@ -165,9 +165,9 @@ workflows:
     jobs:
       # Jobs that will run when you push to your repo ...
       - test_unit
-      - test_instrumented:
-          requires:
-            - test_unit
+#      - test_instrumented:
+#          requires:
+#            - test_unit
 #      - generate_code_cove_report:
 #          requires:
 #            - test_unit
