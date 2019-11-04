@@ -12,3 +12,4 @@ class FrugalApp : Application() {
 
 
 }
+

@@ -99,8 +99,8 @@ jobs:
       - *android_dependencies
       - *save_gradle_cache
       - *save_gems_cache
-#      - *export_gservices_key
-#      - *decode_gservices_key
+      - *export_gservices_key
+      - *decode_gservices_key
       - run:
           name: Run unit tests
           command: bundle exec fastlane unit_tests
@@ -122,22 +122,22 @@ jobs:
       - *android_dependencies
       - *save_gradle_cache
       - *save_gems_cache
-#      - *export_gservices_key
-#      - *decode_gservices_key
-#      - *export_gcloud_key
-#      - *decode_gcloud_key
+      - *export_gservices_key
+      - *decode_gservices_key
+      - *export_gcloud_key
+      - *decode_gcloud_key
       - run:
           name: Uninstall crcmod
           command: echo "y" | sudo pip uninstall crcmod
       - run:
           name: Install crcmod
           command: sudo pip install -U crcmod
-#      - run:
-#          name: Run instrumentation tests in Firebase Test Lab
-#          command: bundle exec fastlane instrumentation_tests_testlab
       - run:
-          name: Run instrumentation tests in AVD
-          command: bundle exec fastlane instrumentation_tests
+          name: Run instrumentation tests in Firebase Test Lab
+          command: bundle exec fastlane instrumentation_tests_testlab
+#      - run:
+#          name: Run instrumentation tests in AVD
+#          command: bundle exec fastlane instrumentation_tests
       - store_artifacts:
           path: firebase/
           destination: /firebase/
@@ -165,9 +165,9 @@ workflows:
     jobs:
       # Jobs that will run when you push to your repo ...
       - test_unit
-#      - test_instrumented:
-#          requires:
-#            - test_unit
+      - test_instrumented:
+          requires:
+            - test_unit
 #      - generate_code_cove_report:
 #          requires:
 #            - test_unit

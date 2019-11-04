@@ -72,6 +72,9 @@ dependencies {
     //implementation 'androidx.ui:ui-material:0.1.0-dev02'
     //implementation 'androidx.ui:ui-tooling:0.1.0-dev02'
 
+    /**Firebase*/
+    implementation "com.google.firebase:firebase-analytics:$versions.firebase.analytics"
+
     /**Lifecycle*/
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
@@ -108,3 +111,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+
+apply plugin: 'com.google.gms.google-services'
