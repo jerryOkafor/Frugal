@@ -73,7 +73,7 @@ platform :android do
   desc "Generate code report and upload to codcov"
   lane :generate_code_report do
     codecov_reporter(
-        token: "7b128fda-650b-4099-a49a-9e960ae4ae05"
+        token: "c1515c80-2490-4719-9932-7d47ae79474a"
      )
    end
 end

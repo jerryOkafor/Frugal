@@ -1,13 +1,13 @@
 # PinchMe
-A journal application where in users can pen down their thoughts and feelings submitted for the "7 Days of code" challlenge for the GoogleAfiricaScholarship Challenge offered by Udacity and powered by Andela Learning Community (ALC) learners.
+A personal Budget App to demonstrate the latest in Jetpack and Android Architecture component including Room, Navigation, ViewModel, Paging, WorkManager and Kotlin Coroutine. Built with Kotlin.
 
-[![CircleCI](https://circleci.com/gh/po10cio/JournalApp.svg?style=svg)](https://circleci.com/gh/po10cio/JournalApp)
+[![CircleCI](https://circleci.com/gh/jerryOkafor/Frugal.svg?style=svg)](https://circleci.com/gh/jerryOkafor/Frugal)
 [![codecov](https://codecov.io/gh/po10cio/JournalApp/branch/master/graph/badge.svg)](https://codecov.io/gh/po10cio/JournalApp)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8ceda2e1681c4b8aa9b44c5da15ddb53)](https://www.codacy.com/app/po10cio/JournalApp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=po10cio/JournalApp&amp;utm_campaign=Badge_Grade)
 
 
 Included:
-Test code sharinf between local and intrumentation test.
+Test code sharing between local and instrumentation test.
 
 ## Getting Started
 
@@ -23,14 +23,14 @@ Android Studio >= 3.5
 
 Follow this steps if you want get a local copy of the project in your machine.
 
-##### 1. Clone or fork the repository by running the cammand below.
+##### 1. Clone or fork the repository by running the command below.
 	
 	git clone https://github.com/po10cio/JournalApp.git
 
 ##### 2. Import the project in AndroidStudio.
 1. In Android Studio, go to File -> New -> Import project
-2. Follew the dialog wizard to choose the folder where you cloned the project and click on open.
-3. Androidstudio imports the projects and builds it for you. 
+2. Follow the dialog wizard to choose the folder where you cloned the project and click on open.
+3. AndroidStudio imports the projects and builds it for you. 
 
 ##### 3. Add Firebase config.
 1. Go to [Firebase](https://console.firebase.google.com/) and click on + Add project to create a new project
@@ -40,7 +40,7 @@ Follow this steps if you want get a local copy of the project in your machine.
 
 You can now run the project in an Android Emulator or a real Android Device.
 
-Note : A sample debug apk is avaible in the [Here](apk/app-debug.apk) 
+Note : A sample debug apk is available in the [Here](apk/app-debug.apk) 
 
 ## Running the tests
 
@@ -48,7 +48,7 @@ Journal App comes with both Instrumented tests and Unit tests.
 
 ### Instrumentation tests
 
-To run the instrumentaton tests, you need an Android Emulator or a real Android device. Once you have any of this, open a terminal in AndroidStudio and run the command below.
+To run the instrumentation tests, you need an Android Emulator or a real Android device. Once you have any of this, open a terminal in AndroidStudio and run the command below.
 
 ```
 ./gradlew connectedAndroidTest
@@ -60,7 +60,7 @@ You do not need any device (Emulator of real Android device) to run this test. T
 ```
 ./gradlew test
 ```
-Note : This project has [Fastlane]() enabled, so if you like fastlane, you can list the lanes and select the one yu wish to run.
+Note : This project has [Fastlane]() enabled, so if you like Fastlane, you can list the lanes and select the one yu wish to run.
 
 ## Deployment
 
@@ -68,10 +68,10 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Kotlin](https://kotlinlang.org/) - Koltin for JVM
+* [Kotlin](https://kotlinlang.org/) - Kotlin for JVM
 * [Room Database](https://developer.android.com/topic/libraries/architecture/room) - The Room persistence library for Android.
 * [Koin](https://github.com/InsertKoinIO/koin) - A pragmatic lightweight dependency injection framework for Kotlin
-* [Firebase](https://firebase.google.com/) - For authentication and data persisntence.
+* [Firebase](https://firebase.google.com/) - For authentication and data persistence.
 
 ## Contributing
 
