@@ -1,7 +1,6 @@
-package me.jerryhanks.pinchme.data.db
+package me.jerryhanks.frugal.data.db
 
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 
 /**

@@ -1,6 +1,6 @@
-package me.jerryhanks.pinchme
+package me.jerryhanks.frugal
 
-import me.jerryhanks.pinchme.data.db.BudgetItem
+import me.jerryhanks.frugal.data.db.BudgetItem
 
 
 /**

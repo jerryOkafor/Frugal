@@ -1,12 +1,11 @@
-package me.jerryhanks.pinchme.data.db
+package me.jerryhanks.frugal.data.db
 
 import androidx.annotation.CallSuper
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import kotlinx.coroutines.runBlocking
-import me.jerryhanks.pinchme.TestUtils
+import me.jerryhanks.frugal.TestUtils
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

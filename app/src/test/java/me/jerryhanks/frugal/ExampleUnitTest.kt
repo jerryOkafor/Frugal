@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme
+package me.jerryhanks.frugal
 
 import org.junit.Test
 

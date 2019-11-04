@@ -1,7 +1,7 @@
-package me.jerryhanks.pinchme.data.db
+package me.jerryhanks.frugal.data.db
 
 import androidx.test.core.app.ApplicationProvider
-import me.jerryhanks.pinchme.PinchMeApp
+import me.jerryhanks.frugal.FrugalApp
 import org.junit.Before
 
 
@@ -16,7 +16,7 @@ open class BaseDaoTest {
 
     @Before
     open fun setUp() {
-        val context = ApplicationProvider.getApplicationContext<PinchMeApp>()
+        val context = ApplicationProvider.getApplicationContext<FrugalApp>()
         db = PinchMeDatabase.getInstance(context, useInMemory = true)
     }
 

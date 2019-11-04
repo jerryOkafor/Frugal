@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme
+package me.jerryhanks.frugal
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

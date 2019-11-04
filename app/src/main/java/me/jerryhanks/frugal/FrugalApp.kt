@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme
+package me.jerryhanks.frugal
 
 import android.app.Application
 
@@ -8,7 +8,7 @@ import android.app.Application
  * for PinchMe
  **/
 
-class PinchMeApp : Application() {
+class FrugalApp : Application() {
 
 
 }

@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme.data
+package me.jerryhanks.frugal.data
 
 
 /**

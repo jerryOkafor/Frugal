@@ -1,4 +1,4 @@
-package me.jerryhanks.pinchme.data.db
+package me.jerryhanks.frugal.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -17,7 +17,7 @@ abstract class PinchMeDatabase : RoomDatabase() {
     abstract fun budgetDao():BudgetDao
 
     companion object{
-        private const val DB_NAME = "pinchme.db"
+        private const val DB_NAME = "frugal.db"
 
         @Volatile
         private  var INSTANCE:PinchMeDatabase? =  null
