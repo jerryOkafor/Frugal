@@ -63,12 +63,15 @@ android {
 
 // To inline the bytecode built with JVM target 1.8 into
 // bytecode that is being built with JVM target 1.6. (e.g. navArgs)
-
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     sourceSets {
         main {
             java {
@@ -83,11 +86,15 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
 
     /**Compose*/
     //implementation 'androidx.ui:ui-layout:0.1.0-dev02'
     //implementation 'androidx.ui:ui-material:0.1.0-dev02'
     //implementation 'androidx.ui:ui-tooling:0.1.0-dev02'
+
+    /**Timber*/
+    implementation "com.jakewharton.timber:timber:$versions.timber"
 
     /**Firebase*/
     implementation "com.google.firebase:firebase-analytics:$versions.firebase.analytics"
@@ -109,6 +116,7 @@ dependencies {
     /**Room*/
     implementation "androidx.room:room-runtime:$versions.room"
     implementation "androidx.room:room-ktx:$versions.room"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$versions.room"
 
     /**Dagger*/

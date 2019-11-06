@@ -1,10 +1,12 @@
 package me.jerryhanks.frugal
 
 import android.app.Application
+import android.util.Log
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import me.jerryhanks.frugal.di.AppInjector
+import timber.log.Timber
 import javax.inject.Inject
 
 

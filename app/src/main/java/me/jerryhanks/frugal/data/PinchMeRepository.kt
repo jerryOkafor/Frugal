@@ -8,6 +8,6 @@ package me.jerryhanks.frugal.data
 
 class PinchMeRepository : PinchMeDataSource {
     override fun sayHello(): String {
-        return "Hello"
+        return "Hello from repository"
     }
 }

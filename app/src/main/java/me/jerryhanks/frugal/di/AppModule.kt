@@ -3,6 +3,8 @@ package me.jerryhanks.frugal.di
 import dagger.Module
 import dagger.Provides
 import me.jerryhanks.frugal.FrugalApp
+import me.jerryhanks.frugal.data.PinchMeDataSource
+import me.jerryhanks.frugal.data.PinchMeRepository
 import javax.inject.Singleton
 
 
@@ -18,5 +20,11 @@ class AppModule(private  val app:FrugalApp){
     @Provides
     fun provideApplication():FrugalApp{
         return app
+    }
+
+    @Singleton
+    @Provides
+    fun provideDataSource():PinchMeDataSource{
+        return PinchMeRepository()
     }
 }

@@ -2,8 +2,10 @@ package me.jerryhanks.frugal.di
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import me.jerryhanks.frugal.FrugalApp
+import me.jerryhanks.frugal.ui.home.HomeModule
 import javax.inject.Singleton
 
 
@@ -14,7 +16,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AppModule::class, BuilderModule::class,
-    AndroidSupportInjectionModule::class,ViewModelModule::class])
+    AndroidSupportInjectionModule::class,AndroidInjectionModule::class,
+    HomeModule::class,ViewModelModule::class])
 interface AppComponent{
     @Component.Builder
     interface  Builder{

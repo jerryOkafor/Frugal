@@ -19,9 +19,15 @@ buildscript {
             /**Dagger*/
             'dagger'    : '2.25.2',
 
+            /**Timber*/
+            'timber':'4.7.1',
+
             'firebase': [
                     'analytics': '17.2.1'
-            ]
+            ],
+
+            /**Constraint Layout*/
+            'constraintLayout':'1.1.3'
     ]
 
     repositories {

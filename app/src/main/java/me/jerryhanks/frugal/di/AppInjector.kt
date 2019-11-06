@@ -1,7 +1,9 @@
 package me.jerryhanks.frugal.di
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -21,20 +23,22 @@ class AppInjector {
     companion object {
         fun init(app: FrugalApp) {
             DaggerAppComponent.builder()
-                .application(app=app)
+                .application(app = app)
                 .appModule(appModule = AppModule(app = app))
                 .build()
+                .inject(app)
 
             app.registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbackAdapter() {
-                override fun onActivityPreCreated(activity: Activity, savedInstanceState: Bundle?) {
-                    super.onActivityPreCreated(activity, savedInstanceState)
-
+                override fun onActivityCreated(activity: Activity, bundle: Bundle?) {
+                    super.onActivityCreated(activity, bundle)
+                    handleActivity(activity = activity)
                 }
             })
         }
 
 
         fun handleActivity(activity: Activity) {
+
             if (activity is HasAndroidInjector) {
                 AndroidInjection.inject(activity)
             }
@@ -42,13 +46,14 @@ class AppInjector {
 
             (activity as? FragmentActivity)?.supportFragmentManager?.registerFragmentLifecycleCallbacks(
                 object : FragmentManager.FragmentLifecycleCallbacks() {
-                    override fun onFragmentPreCreated(
+                    override fun onFragmentPreAttached(
                         fm: FragmentManager,
                         f: Fragment,
-                        savedInstanceState: Bundle?
+                        context: Context
                     ) {
-                        super.onFragmentPreCreated(fm, f, savedInstanceState)
-                        if (f is Injectable){
+                        super.onFragmentPreAttached(fm, f, context)
+
+                        if (f is Injectable) {
                             AndroidSupportInjection.inject(f)
                         }
                     }
