@@ -24,6 +24,10 @@ class FrugalApp : Application(),HasAndroidInjector {
         super.onCreate()
 
         AppInjector.init(this)
+
+        if(BuildConfig.DEBUG){
+            Timber.plant(Timber.DebugTree())
+        }
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
