@@ -24,7 +24,7 @@ class AppInjector {
         fun init(app: FrugalApp) {
             DaggerAppComponent.builder()
                 .application(app = app)
-                .appModule(appModule = AppModule(app = app))
+                .appModule(appModule = AppModule())
                 .build()
                 .inject(app)
 

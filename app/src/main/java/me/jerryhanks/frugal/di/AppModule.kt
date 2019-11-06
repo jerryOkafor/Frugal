@@ -14,13 +14,7 @@ import javax.inject.Singleton
  **/
 
 @Module
-class AppModule(private  val app:FrugalApp){
-
-    @Singleton
-    @Provides
-    fun provideApplication():FrugalApp{
-        return app
-    }
+class AppModule{
 
     @Singleton
     @Provides

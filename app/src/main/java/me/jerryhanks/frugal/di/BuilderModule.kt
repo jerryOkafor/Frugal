@@ -3,8 +3,6 @@ package me.jerryhanks.frugal.di
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import me.jerryhanks.frugal.MainActivity
-import me.jerryhanks.frugal.ui.home.HomeFragment
-import me.jerryhanks.frugal.ui.home.HomeModule
 
 
 /**
