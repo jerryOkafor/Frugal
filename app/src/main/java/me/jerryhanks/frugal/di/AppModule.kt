@@ -5,6 +5,8 @@ import dagger.Provides
 import me.jerryhanks.frugal.FrugalApp
 import me.jerryhanks.frugal.data.PinchMeDataSource
 import me.jerryhanks.frugal.data.PinchMeRepository
+import me.jerryhanks.frugal.ui.home.HomeDataSource
+import me.jerryhanks.frugal.ui.home.HomeRepository
 import javax.inject.Singleton
 
 
@@ -15,7 +17,6 @@ import javax.inject.Singleton
 
 @Module
 class AppModule{
-
     @Singleton
     @Provides
     fun provideDataSource():PinchMeDataSource{

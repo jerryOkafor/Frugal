@@ -9,5 +9,15 @@
         android:id="@+id/homeFragment"
         android:name="me.jerryhanks.frugal.ui.home.HomeFragment"
         android:label="Frugal"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="me.jerryhanks.frugal.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 </navigation>

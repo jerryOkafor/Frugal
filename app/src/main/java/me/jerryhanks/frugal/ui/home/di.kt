@@ -3,6 +3,7 @@ package me.jerryhanks.frugal.ui.home
 import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
 import me.jerryhanks.frugal.di.FragmentScope
@@ -15,7 +16,7 @@ import me.jerryhanks.frugal.di.ViewModelKey
  **/
 
 @Module
-abstract class HomeModule {
+abstract class HomeBuilderModule {
 
     @ContributesAndroidInjector
     @FragmentScope
@@ -25,4 +26,14 @@ abstract class HomeModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun provideHomeViewModel(homeViewModel: HomeViewModel): ViewModel
+}
+
+@Module
+class HomeModule{
+
+    @Provides
+    fun provideHomeDataSource():HomeDataSource{
+        return HomeRepository()
+    }
+
 }

@@ -8,12 +8,14 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import kotlinx.android.synthetic.main.activity_main.*
 import me.jerryhanks.frugal.ui.home.HomeViewModel
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasAndroidInjector {
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
         setContentView(R.layout.activity_main)
 
         appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment),null) {
+            Timber.d("I am here")
             return@AppBarConfiguration  true
         }
 
@@ -38,8 +41,8 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
     }
 
     override fun onSupportNavigateUp():Boolean{
-        Log.d("TAG","Navigating up from ${navController.currentDestination}")
-        return NavigationUI.navigateUp(navController,appBarConfiguration)
+        Timber.d("Navigating up from ${navController.currentDestination}")
+        return navController.navigateUp(appBarConfiguration)
     }
 
     override fun androidInjector(): AndroidInjector<Any> {

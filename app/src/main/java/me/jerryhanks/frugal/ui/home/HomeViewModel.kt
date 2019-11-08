@@ -1,9 +1,10 @@
 package me.jerryhanks.frugal.ui.home
 
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import me.jerryhanks.frugal.FrugalApp
-import me.jerryhanks.frugal.data.PinchMeDataSource
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -14,9 +15,16 @@ import javax.inject.Inject
 
 
 class HomeViewModel
-@Inject internal constructor(private  val dataSource: PinchMeDataSource, private  val app:FrugalApp): AndroidViewModel(app){
+@Inject internal constructor(
+    private val dataSource: HomeDataSource,
+    private val app: FrugalApp
+) : AndroidViewModel(app) {
 
-    fun sayHello(){
-        Log.d("HERE","${dataSource.sayHello()} : ${getApplication<FrugalApp>().packageName}")
+    private val _helloResult = MutableLiveData<String>()
+
+    val helloResult:LiveData<String> = _helloResult
+
+    fun sayHello() {
+        _helloResult.postValue(dataSource.sayHelloFromHome())
     }
 }

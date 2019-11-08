@@ -12,6 +12,7 @@ import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 import me.jerryhanks.frugal.ActivityLifecycleCallbackAdapter
 import me.jerryhanks.frugal.FrugalApp
+import me.jerryhanks.frugal.ui.home.HomeModule
 
 
 /**

@@ -15,4 +15,5 @@ abstract class BuilderModule {
     @ContributesAndroidInjector
     @ActivityScope
     internal abstract fun provideMainActivity():MainActivity
+
 }

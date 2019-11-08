@@ -33,6 +33,11 @@ android {
     }
 
     testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
         unitTests.all {
             jacoco {
                 includeNoLocationClasses = true
@@ -127,16 +132,25 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
 
     /**Test*/
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test.ext:junit:1.1.1'
     testImplementation "androidx.room:room-testing:$versions.room"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutine"
+    testImplementation "org.robolectric:robolectric:$versions.robolectric"
+    testImplementation "org.mockito:mockito-inline:$versions.mockito"
+
 
     // Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$versions.lifecycle"
 
     /**Android Test*/
+    androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "org.mockito:mockito-android:$versions.mockito"
+
+
+    /**Test Utils - Orchestrator*/
+    androidTestUtil 'androidx.test:orchestrator:1.2.0'
 }
 
 
